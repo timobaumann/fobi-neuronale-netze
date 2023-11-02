@@ -1,0 +1,24 @@
+digraph {
+  label="Our super-simple computational graph"
+  rankdir="LR"
+//  splines=polyline
+  a_1 [color=lightgray; fontcolor=lightgray; label=<a<SUB>1</SUB>>, shape=circle];
+  a_1 -> sum [color=lightgray; fontcolor=lightgray; label=<&times;w<SUB>1</SUB>>];
+  a_2 [color=lightgray; fontcolor=lightgray; label=<a<SUB>2</SUB>>, shape=circle];
+  a_2 -> sum [color=lightgray; fontcolor=lightgray; label=<&times;w<SUB>2</SUB>>];
+  a_3 [color=lightgray; fontcolor=lightgray; label=<a<SUB>3</SUB>>, shape=circle];
+  a_3 -> sum [color=lightgray; fontcolor=lightgray; label=<&times;w<SUB>3</SUB>>];
+  many_more [color=lightgray; fontcolor=lightgray; label=".\n.\n." textdir="TB", shape=none] 
+  {rank="same"
+  bias [style=invis];
+  sum [label=<&Sigma;>, shape=square];
+  }
+  bias -> sum [label="b"];
+  many_more -> sum [style=invis]
+  a_n [color=lightgray; fontcolor=lightgray; label=<a<SUB>n</SUB>>, shape=circle];
+  a_n -> sum [color=lightgray; fontcolor=lightgray; label=<&times;w<SUB>n</SUB>>];
+  sigmoid [fontcolor=lightgray; label=<&sigma;>, shape=square];
+  sum -> sigmoid
+  a_out [label=<a<SUB>out</SUB>>, shape=circle];
+  sigmoid -> a_out
+}
