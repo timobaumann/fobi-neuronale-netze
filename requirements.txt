@@ -4,4 +4,4 @@ matplotlib
 numpy
 ipywidgets
 pillow
-
+ipympl
